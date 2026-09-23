@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Barbearia Pitaia</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700&family=Work+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --rosa-casca: #C6146B;
+    --rosa-escuro: #7A0F45;
+    --verde-escama: #2E5B3E;
+    --polpa: #FBF3F6;
+    --semente: #1A1414;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  html{scroll-behavior:smooth;}
+  body{
+    background:var(--polpa);
+    color:var(--semente);
+    font-family:'Work Sans',sans-serif;
+    line-height:1.5;
+  }
+  h1,h2,.brand{font-family:'Fraunces',serif;}
+  a{color:inherit;}
+  .wrap{max-width:960px;margin:0 auto;padding:0 24px;}
+
+  header{
+    background:var(--rosa-escuro);
+    color:var(--polpa);
+    position:sticky;top:0;z-index:10;
+    border-bottom:1px solid rgba(251,243,246,.15);
+  }
+  header .wrap{
+    display:flex;align-items:center;justify-content:space-between;
+    padding-top:16px;padding-bottom:16px;
+  }
+  .brand{font-size:1.3rem;font-weight:700;letter-spacing:.02em;}
+  .brand span{color:var(--verde-escama);}
+  nav ul{list-style:none;display:flex;gap:28px;}
+  nav a{text-decoration:none;font-size:.95rem;color:var(--polpa);opacity:.85;}
+  nav a:hover, nav a:focus-visible{opacity:1;text-decoration:underline;}
+
+  .hero{
+    background:radial-gradient(circle at 80% 25%, rgba(198,20,107,.35), transparent 55%), var(--rosa-escuro);
+    color:var(--polpa);
+    padding:96px 0 84px;
+    position:relative;
+    overflow:hidden;
+  }
+  .hero::after{
+    content:"";
+    position:absolute;right:-60px;top:-60px;width:280px;height:280px;
+    border-radius:50%;
+    background:radial-gradient(circle at 35% 35%, var(--verde-escama) 0 8px, transparent 9px) 0 0/34px 34px,
+               var(--rosa-casca);
+    opacity:.5;
+  }
+  .hero h1{font-size:clamp(2.4rem,5vw,3.6rem);font-weight:700;max-width:14ch;line-height:1.08;position:relative;}
+  .hero p{max-width:44ch;margin-top:18px;font-size:1.1rem;color:rgba(251,243,246,.85);position:relative;}
+  .btn{
+    display:inline-block;margin-top:32px;position:relative;
+    background:var(--verde-escama);color:var(--polpa);
+    padding:14px 28px;border-radius:2px;
+    text-decoration:none;font-weight:600;font-size:.95rem;
+    border:1px solid var(--verde-escama);
+    transition:background .15s ease, color .15s ease;
+  }
+  .btn:hover, .btn:focus-visible{background:transparent;color:var(--verde-escama);border-color:var(--polpa);}
+
+  section{padding:72px 0;border-bottom:1px solid rgba(26,20,20,.08);}
+  section h2{font-size:1.9rem;font-weight:700;margin-bottom:36px;color:var(--rosa-escuro);}
+
+  .servicos{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1px;background:rgba(26,20,20,.1);}
+  .servico{background:var(--polpa);padding:28px 24px;}
+  .servico .preco{font-family:'Fraunces',serif;font-size:1.5rem;color:var(--rosa-casca);}
+  .servico h3{font-size:1.05rem;margin:8px 0 6px;}
+  .servico p{font-size:.9rem;color:rgba(26,20,20,.65);}
+
+  .info{display:grid;grid-template-columns:1fr 1fr;gap:48px;}
+  .info h3{font-size:1rem;margin-bottom:12px;color:var(--verde-escama);}
+  .horarios dl{display:grid;grid-template-columns:auto 1fr;gap:6px 16px;font-size:.95rem;}
+  .horarios dt{color:rgba(26,20,20,.55);}
+
+  footer{
+    background:var(--semente);color:rgba(251,243,246,.7);
+    padding:32px 0;font-size:.85rem;
+    display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px;
+  }
+
+  @media (max-width:640px){
+    nav ul{gap:16px;font-size:.85rem;}
+    .info{grid-template-columns:1fr;}
+    .hero::after{display:none;}
+  }
+  @media (prefers-reduced-motion: reduce){
+    html{scroll-behavior:auto;}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <div class="brand">Barbearia <span>Pitaia</span></div>
+    <nav>
+      <ul>
+        <li><a href="#servicos">Serviços</a></li>
+        <li><a href="#horarios">Horários</a></li>
+        <li><a href="#contato">Contato</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="wrap">
+    <h1>Corte com cor, atendimento sem pressa.</h1>
+    <p>Barbearia de bairro com técnica apurada em corte, barba e navalha. Marque seu horário e chegue sem fila de espera.</p>
+    <a class="btn" href="#contato">Agendar horário</a>
+  </div>
+</section>
+
+<section id="servicos">
+  <div class="wrap">
+    <h2>Serviços</h2>
+  </div>
+  <div class="servicos">
+    <div class="servico">
+      <div class="preco">R$ 45</div>
+      <h3>Corte de cabelo</h3>
+      <p>Máquina e tesoura, acabamento na navalha.</p>
+    </div>
+    <div class="servico">
+      <div class="preco">R$ 35</div>
+      <h3>Barba</h3>
+      <p>Toalha quente, óleo e navalha.</p>
+    </div>
+    <div class="servico">
+      <div class="preco">R$ 70</div>
+      <h3>Combo corte + barba</h3>
+      <p>Os dois serviços com desconto.</p>
+    </div>
+    <div class="servico">
+      <div class="preco">R$ 20</div>
+      <h3>Sobrancelha</h3>
+      <p>Alinhamento na navalha.</p>
+    </div>
+  </div>
+</section>
+
+<section id="horarios">
+  <div class="wrap info">
+    <div class="horarios">
+      <h3>Horário de funcionamento</h3>
+      <dl>
+        <dt>Ter – Sex</dt><dd>09h às 19h</dd>
+        <dt>Sábado</dt><dd>08h às 17h</dd>
+        <dt>Domingo e Segunda</dt><dd>Fechado</dd>
+      </dl>
+    </div>
+    <div id="contato">
+      <h3>Contato</h3>
+      <p>Rua das Palmeiras, 128 — Curitiba, PR</p>
+      <p>(41) 90000-0000</p>
+      <p>@barbeariapitaia</p>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap" style="display:flex;justify-content:space-between;width:100%;flex-wrap:wrap;gap:8px;">
+    <span>Barbearia Pitaia</span>
+    <span>Rua das Palmeiras, 128 — Curitiba, PR</span>
+    <span>Página gerada às {{DATA_HORA}}</span>
+  </div>
+</footer>
+
+</body>
+</html>
